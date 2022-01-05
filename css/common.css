@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@font-face {
+    font-family: 'Albra';
+    font-display: swap;
+    src: local('Albra Sans Regular'), 
+    local('Albra-Sans-Regular'), 
+    url('../fonts/AlbraSansRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.under{
+    position: relative;
+}
+.under:after{
+    content: '';
+    position: absolute;
+    width: 0; 
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    height: 1px;
+    transition: 0.3s;
+}
+.under:hover::after{
+    width: 100%;
+}
+
+.drop_arrow{
+    position: relative;
+    padding-right: 20px;
+    
+}
+.drop_arrow::before{
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    height: 1px;
+    background-color: white;
+    transition: 0.2s width, 0.2s background-color;
+
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid white;
+    clear: both;
+    transition: 0.3s transform cubic-bezier(0.33, 1, 0.68, 1), 0.3s border-top cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+header.on .drop_arrow::before{
+    border-top: 6px solid #000;
+}
+.new.on .drop_arrow::before{
+    transform: translateY(-50%) scaleY(-1);
+}
+
+.under.on:hover::after{
+    background: #000;
+}
+.menu_open .under.on:hover::after{
+    background: #fff;
+}
+
+.scroll_h{
+    overflow: hidden;
+}
+
+.blind{
+    width: 1px; height: 1px;
+    margin: -1px;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.learn{
+    display: block;
+    width: 125px; height: 47px;
+    text-align: center;
+    line-height: 45px;
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 50px;
+    margin-top: 40px;
+    transition: 0.5s;
+}
+.learn:hover{
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+}
+
+h2.title{
+    font-family: 'Albra', 'sans-serif';
+    font-size: 140px;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+strong.subtitle{
+    font-family: 'Albra','Noto Sans KR', 'sans-serif';
+    display: block;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    margin-bottom: 30px;
+}
+p.info{
+    font-size: 16px;
+    line-height: 1.78;
+    letter-spacing: -0.04em;
+}
+
+.product_info{
+    font-size: 16px;
+    line-height: 1.78;
+    letter-spacing: -0.04em;
+    color: #666;
+}
+.size{
+    margin-right: 16px;
+}
+
+
+.sp_bg, header .logo_area .menu_area .menu i::after, footer .inner .flogo_area .sp_bg::after,
+header .sns_area .you::after, header .sns_area .ins::after, header .sns_area .face::after,
+header .cart_area .cart::after{
+    background-image: url(../img/sp_bg.png);
+    background-repeat: no-repeat;
+    background-size: 300px;
+}

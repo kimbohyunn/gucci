@@ -1,0 +1,450 @@
+@import 'reset.css';
+@import 'common.css';
+
+body{
+    color: #000;
+    font-size: 14px;
+    letter-spacing: -0.04em;
+    min-width: 1360px;
+    font-family: 'Roboto','Noto Sans KR', sans-serif;
+}
+
+.inner{
+    width: 1300px;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+
+/* header */
+header{
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Albra', 'Noto Sans KR';
+}
+header .innerr{
+    padding: 80px 80px 0;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 20;
+}
+header .logo_area .wrap{
+    display: flex;
+}
+header .logo_area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .logo_area h1{
+    margin-right: 100px;
+}
+header .logo_area h1 a{
+    width: 96px;
+    font-size: 32px;
+}
+
+header .logo_area .gnb_area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 30px;
+}
+header .logo_area .gnb_area li{
+    position: relative;
+}
+header .logo_area .gnb_area > li:first-child{
+    padding: 0 30px 0 15px;
+}
+
+header .logo_area .gnb_area .gnb > li:last-child{
+    margin: 0 35px;
+    width: 60px;
+}
+header .logo_area .gnb_area .gnb{
+    display: flex;
+}
+header .logo_area .gnb_area .gnb ul{
+    position: absolute;
+    top: 30px; left: 0;
+    width: 240px;
+    line-height: 30px;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+header .logo_area .gnb_area .gnb ul.on{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+header .logo_area .gnb_area .gnb ul > li > a{
+    line-height: 30px;
+}
+
+header .logo_area .menu_area{
+    position: relative;
+    align-items: center;
+    display: flex;
+}
+
+header .logo_area .menu_area .our{
+    margin: 0 35px;
+}
+header .logo_area .menu_area .menu{
+    width: 30px; height: 30px;
+    margin-left: 35px;
+    display: block;
+}
+header .logo_area .menu_area .menu i::after{
+    content: '';
+    position: absolute;
+    top: 0px; right: 0;
+    width: 30px; height: 30px;
+    background-position: -4px -124px;
+    vertical-align: top;
+}
+
+header .sns_area{
+    position: fixed;
+    bottom: 60px; left: 0px;
+    padding: 0 80px;
+}
+header .sns_area a{
+    display: block;
+    width: 40px; height: 40px;
+    position: relative;
+    margin-top: 15px;
+}
+header .sns_area .you::after{
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    background-position: 0 0;
+}
+header .sns_area .ins::after{
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    background-position: 0 -41px;
+}
+header .sns_area .face::after{
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    background-position: 0 -82px;
+}
+
+header .cart_area{
+    position: fixed;
+    padding: 0 55px 30px 0;
+    bottom: 40px; right: 0;
+}
+header .cart_area .cart{
+    display: block;
+    position: relative;
+    width: 55px; height: 55px;
+}
+
+header .cart_area .cart::after{
+    content: '';
+    position: absolute;
+    width: 55px; height: 55px;
+    background-position: -44px 0;
+}
+
+/* scroll */
+header.on{
+    color: #000;
+    transition: 1s;
+}
+header.on .our:hover .line, header.on .logo_area .gnb_area .ph:hover .line{
+    background-color: #000;
+}
+header.on .logo_area .menu_area .menu i::after{
+    content: '';
+    position: absolute;
+    top: 0px; right: 0;
+    width: 30px; height: 30px;
+    background-position: -39px -124px;
+    vertical-align: top;
+}
+
+/* menu_wrap */
+.menu_open{
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    background-color: #000;
+    z-index: 15;
+    visibility: hidden;
+    opacity: 0;
+    overflow-y: auto;
+    transition: 0.4s;
+}
+.menu_open.active{
+    visibility: visible;
+    opacity: 1;
+}
+.menu_wrap{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 230px;
+}
+.menu_wrap .story_area{
+    width: 247px; height: 483px;
+    padding-left: 85px;
+    border-left: 1px solid #333;
+
+    position: sticky;
+    top: 230px;
+}
+
+.menu_wrap::after{
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+.menu_wrap .product_area{
+    margin-right: 50px;
+    padding-bottom: 180px;
+}
+.menu_wrap .product_area li{
+    margin-top: 30px;
+}
+.menu_wrap a{
+    font-size: 44px;
+    font-weight: 700;
+    
+}
+.menu_open{color: #fff;}
+.menu_open h3{
+    display: block;
+    color: #e5c7a9;
+    font-size: 12px;
+    margin-bottom: 35px;
+}
+
+header .menu_open .subgnb a{
+    font-size: 20px;   
+    margin-left: 10px;
+}
+header .menu_open .main:hover{
+    color: #888;
+    transition: 0.5s;
+}
+.menu_open .gnb .sub{
+    height: 0;
+    overflow: hidden;
+}
+.menu_wrap .story_area{
+    width: 247px;
+    padding-left: 85px;
+    border-left: 1px solid #333;
+    position: sticky;
+    top: 230px;
+}
+.menu_wrap .story_area .story{
+    margin-bottom: 40px;
+}
+.menu_wrap .story_area a{
+    font-size: 22px;
+    font-weight: 300;
+    margin: 3px 0;
+    display: inline-block;
+}
+.menu_wrap .story_area .language{
+    margin-top: 40px;
+}
+.menu_wrap .story_area .language a{
+    font-size: 14px;
+    margin: 5px 0;
+    display: inline;
+    font-weight: 700;
+    color: #666;
+}
+.menu_wrap .story_area .language .checked{
+    margin-right: 10px;
+    color: #fff;
+}
+
+header.open .gnb_area{
+    display: none;
+}
+header.open .menu_area .our{
+    display: none;
+}
+header.open h1 a{
+    color: #fff;
+}
+header.open .logo_area .menu_area .menu i::after{
+    content: '';
+    position: absolute;
+    top: 0px; right: 0;
+    width: 30px; height: 30px;
+    background-position: -4px -124px;
+    vertical-align: top;
+}
+header.open .logo_area .menu_area .menu i::after{
+    transform: rotate(45deg);
+    transition: 0.3s;
+}
+header.open .sns_area .you::after{
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    background-position: -130px -82px;
+    width: 41px; height: 41px;
+}
+header.open .sns_area .ins::after{
+    content: '';
+    position: absolute;
+    width: 41px; height: 42px;
+    background-position: -87px -81px;
+}
+header.open .sns_area .face::after{
+    content: '';
+    position: absolute;
+    width: 41px; height: 41px;
+    background-position: -43px -82px;
+}
+header.open .cart_area .cart::after{
+    content: '';
+    position: absolute;
+    width: 55px; height: 55px;
+    background-position: -100px 0;
+}
+
+/* footer */
+footer{
+    padding: 80px 0 90px;
+    background-color: #000;
+    color: #fff;
+}
+footer .inner .flogo_area{
+    display: flex;
+    justify-content: space-between;
+}
+footer .inner .flogo_area h2{
+    width: 100px;
+    margin-bottom: 53px;
+    font-size: 32px;
+    font-family: 'Albra', 'sans-serif';
+}
+footer .inner .flogo_area .select{
+    position: relative;
+}
+footer .inner .flogo_area .family{
+   padding-right: 25px;
+}
+footer .inner .flogo_area .family a{
+    border-bottom: 1px solid #fff;
+    margin-right: 10px;
+}
+footer .inner .flogo_area .select_box{
+    width: 122px; height: 165px;
+    padding: 20px 40px 20px 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 34px;
+    left: -10px;
+    color: #000;
+    border-radius: 10px;
+    font-weight: 500;
+
+    display: none;
+}
+footer .inner .flogo_area .select_box li{
+    padding: 5px 0;
+}
+footer .inner .flogo_area .select_box li a:hover{
+    border-bottom: 1px solid #000;
+}
+footer .inner .flogo_area form select{
+    background-color: inherit;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+footer .inner .flogo_area .sp_bg{
+    position: relative;
+    width: 15px; height: 15px;
+    cursor: pointer;
+}
+footer .inner .flogo_area .sp_bg::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0px; right: 0px;
+    width: 15px; height: 15px;
+    background-position: -3px -159px;
+} 
+
+footer .inner .address_area{
+    margin-bottom: 30px;
+}
+footer .inner .address_area address{
+    font-size: 12px;
+    font-weight: 400;
+}
+footer .inner .address_area address span{
+    line-height: 28px;
+    margin-right: 14px;
+    margin-bottom: 15px;
+}
+footer .inner .address_area address em{
+    font-weight: 700;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+footer .inner .sns_area{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 35px;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+footer .inner .sns_area .copy{
+    font-size: 13px;
+    color: #666666;
+}
+footer .inner .sns_area .sns a{
+    font-size: 13px;
+    margin-left: 25px;
+}
+footer .inner .sns_area .sns a:hover{
+    border-bottom: 1px solid #fff;
+}
+footer .family a{
+    position: relative;
+}
+footer .family a::after{
+    content: '';
+    display: inline-block;
+    width: 15px; height: 15px;
+    background-image: url(../img/footer_arrow.png);
+    background-position: center center;
+    background-size: 15px;
+    position: absolute;
+    top: 2px; right: -20px;
+    transition: 0.3s transform ease-in-out;
+}
+
+footer .family a.on::after{
+    transform: rotate(180deg);
+}
